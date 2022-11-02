@@ -1,0 +1,14 @@
+@import 'color.css';
+
+.btn{
+    color:var(--white);
+    background:var(--black);
+    padding:7px 17px;
+    border-radius:6px;
+}
+
+.btn:hover {
+    background-color: var(--linear2)
+}
+   
+    

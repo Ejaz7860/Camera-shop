@@ -9,56 +9,63 @@ const initState = {
   items: [
     {
       id: 1,
-      title: "Winter body",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
-      price: 110,
+      title: "Canon EOS",
+      desc: "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) price in India starts from ₹37,990. It is available at lowest price on Croma in India as on Nov 02, 2022. Take a look at Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) detailed specifications and features.",
+      price: "₹37,990",
       img: Item1,
+      votes:998
     },
     {
       id: 2,
-      title: "Adidas",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
-      price: 80,
+      title: "Canon EOS",
+      desc: "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) price in India starts from ₹37,990. It is available at lowest price on Croma in India as on Nov 02, 2022. Take a look at Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) detailed specifications and features.",
+      price: "₹37,990",
       img: Item2,
+      votes:998
+
     },
     {
       id: 3,
-      title: "Vans",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
-      price: 120,
+      title: "Canon EOS",
+      desc: "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) price in India starts from ₹37,990. It is available at lowest price on Croma in India as on Nov 02, 2022. Take a look at Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) detailed specifications and features.",
+      price: "₹37,990",
       img: Item3,
+      votes:998
+
     },
     {
       id: 4,
-      title: "White",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
-      price: 260,
+      title: "Canon EOS",
+      desc: "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) price in India starts from ₹37,990. It is available at lowest price on Croma in India as on Nov 02, 2022. Take a look at Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) detailed specifications and features.",
+      price: "₹37,990",
       img: Item4,
+      votes:998
+
     },
     {
       id: 5,
-      title: "Cropped-sho",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
-      price: 160,
+      title: "Canon EOS",
+      desc: "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) price in India starts from ₹37,990. It is available at lowest price on Croma in India as on Nov 02, 2022. Take a look at Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) detailed specifications and features.",
+      price: "₹37,990",
       img: Item5,
+      votes:998
+
     },
     {
       id: 6,
-      title: "Blues",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
-      price: 90,
+      title: "Canon EOS",
+      desc: "Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) price in India starts from ₹37,990. It is available at lowest price on Croma in India as on Nov 02, 2022. Take a look at Canon EOS 1500D 24.1MP DSLR Camera (EF-S 18-55mm IS II lens) detailed specifications and features.",
+      price: "₹37,990",
       img: Item6,
+      votes:998
+
     },
   ],
   addedItems: [],
   total: 0,
 };
 const cardReducer = (state = initState, action) => {
-
-  console.log('card Reducer is calling')
-
       return state;
-  
 };
 
 export default cardReducer;

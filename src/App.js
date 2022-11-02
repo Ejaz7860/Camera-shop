@@ -5,17 +5,19 @@ import About from "./app/pages/About";
 import Contact from "./app/pages/Contact";
 import Dashboard from "./app/pages/Dashboard";
 import CartProduct from "./app/pages/CartProduct";
+import SingleProduct from "./app/pages/SingleProduct";
 
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/camera" element={<Dashboard />} />
-          <Route path="/camera/product" element={<Sample />} />
-          <Route path="/camera/cart/items" element={<CartProduct />} />
-          <Route path="/camera/about" element={<About />} />
-          <Route path="/camera/contact" element={<Contact />} />
+          <Route path="/camera" element={<Dashboard/>} />
+          <Route path="/camera/product" element={<Sample/>} />
+          <Route path="/camera/product/:id" element={<SingleProduct/>} />
+          <Route path="/camera/cart/items" element={<CartProduct/>} />
+          <Route path="/camera/about" element={<About />}/>
+          <Route path="/camera/contact" element={<Contact/>}/>
         </Routes>
       </Router>
     </>

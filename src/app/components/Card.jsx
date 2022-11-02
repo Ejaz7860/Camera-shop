@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import {
   Container,
   SimpleGrid,
@@ -55,7 +56,7 @@ const Card = () => {
                 const {id, title, price, img, desc } = item;
                 return (
                   <>
-                    <Box
+                  <Box
                       key={idx}
                       maxW="300"
                       borderWidth="1px"
@@ -91,10 +92,16 @@ const Card = () => {
                           justifyContent={"space-between"}
                         >
                           <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                            34 reviews
+                          <Link to={`/camera/product/${id}`} state={item}>
+                            <Button
+                             colorScheme="blue"
+                             variant="outline"
+                            >
+                              view
+                            </Button>
+                          </Link>
+
                           </Box>
-                          {/*               <Button>Add to cart</Button>
-                           */}
 
                           <Box as="span" mr="2" color="gray.600" fontSize="sm">
                             <Button
