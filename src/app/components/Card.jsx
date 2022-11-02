@@ -8,83 +8,131 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addTOCart } from "../redux/action/action";
+import ProductCart from "./ProductCart";
+import Category from "./Categories";
 
 const Card = () => {
-  const data = useSelector((state) => state.productReducer);
+  const data = useSelector((state) => state.cardReducer);
+
+  const dispatch = useDispatch();
+
+  const Cart = (data) => {
+    dispatch(addTOCart(data));
+  };
 
   return (
     <>
-      <Container
-        display={"flex"}
-        justifyContent={"center"}
-        maxW="900px"
-      >
-        <SimpleGrid
-          columns={{ md: "3", sm: "1" }}
-          m={2}
-          justifyContent={{ sm: "center" }}
+      <Container justifyContent={"center"} display={"flex"} maxW="100%">
+        {/* CATEOGRY Component */}
+        <Container
+          mt={3}
+          left={4}
+          position="fixed"
+          overflow={"hidden"}
+          maxWidth={"20%"}
+          shadow={'lg'}
+          height={"480"}
+          bg='#f8fffb'
+          borderRadius={3}
+
         >
-          {data.items ? (
-            data.items.map((item, idx) => {
-              const { title, price, img } = item;
-              return (
-                <>
-                  <Box
-                    key={idx}
-                    maxW="md"
-                    borderWidth="1px"
-                    borderRadius="lg"
-                    m={2}
-      
-                    overflow="hidden"
-                  >
-                    <Image src={img} alt={""} />
+          <Category />
+        </Container>
 
-                    <Box p="6">
-                      <Box display="flex" alignItems="baseline">
-                        <Badge borderRadius="full" px="2" colorScheme="teal">
-                          New
-                        </Badge>
-                      </Box>
+        {/* End */}
 
-                      <Box
-                        mt="1"
-                        fontWeight="semibold"
-                        as="h4"
-                        lineHeight="tight"
-                        noOfLines={1}
-                      >
-                        {title}
-                      </Box>
+        {/* Product List */}
+        <Container m={0} maxW="700">
+          <SimpleGrid
+            columns={{ md: "3", sm: "1" }}
+            m={2}
+            justifyContent={{ sm: "center" }}
+          >
+            {data.items ? (
+              data.items.map((item, idx) => {
+                const { title, price, img } = item;
+                return (
+                  <>
+                    <Box
+                      key={idx}
+                      maxW="300"
+                      borderWidth="1px"
+                      borderRadius="lg"
+                      m={2}
+                      overflow="hidden"
+                    >
+                      <Image src={img} alt={""} />
 
-                      <Box>{price}</Box>
-
-                      <Box
-                        display="flex"
-                        mt="2"
-                        alignItems="center"
-                        justifyContent={'space-between'}
-                      >
-                        <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                          34 reviews
+                      <Box p="6">
+                        <Box display="flex" alignItems="baseline">
+                          <Badge borderRadius="full" px="2" colorScheme="teal">
+                            New
+                          </Badge>
                         </Box>
-                        {/*               <Button>Add to cart</Button>
-                         */}
 
-                        <Box as="span" mr="2" color="gray.600" fontSize="sm">
-                          <Button colorScheme="pink" variant='outline'>cart</Button>{" "}
+                        <Box
+                          mt="1"
+                          fontWeight="semibold"
+                          as="h4"
+                          lineHeight="tight"
+                          noOfLines={1}
+                        >
+                          {title}
+                        </Box>
+
+                        <Box>{price}</Box>
+
+                        <Box
+                          display="flex"
+                          mt="2"
+                          alignItems="center"
+                          justifyContent={"space-between"}
+                        >
+                          <Box as="span" ml="2" color="gray.600" fontSize="sm">
+                            34 reviews
+                          </Box>
+                          {/*               <Button>Add to cart</Button>
+                           */}
+
+                          <Box as="span" mr="2" color="gray.600" fontSize="sm">
+                            <Button
+                              onClick={() => Cart(10)}
+                              colorScheme="pink"
+                              variant="outline"
+                            >
+                              cart
+                            </Button>{" "}
+                          </Box>
                         </Box>
                       </Box>
                     </Box>
-                  </Box>
-                </>
-              );
-            })
-          ) : (
-            <Heading>Data is Not available</Heading>
-          )}
-        </SimpleGrid>
+                  </>
+                );
+              })
+            ) : (
+              <Heading>Data is Not available</Heading>
+            )}
+          </SimpleGrid>
+        </Container>
+        {/* Product List ends here */}
+
+        {/* Add to cart component */}
+        <Container
+          mt={3}
+          right={4}
+          position="fixed"
+          overflow={"hidden"}
+          shadow={'lg'}
+          maxWidth={"20%"}
+          borderRadius={3}
+          bg='#f8fffb'
+
+          height={"480"}
+        >
+          <ProductCart />
+        </Container>
       </Container>
     </>
   );
