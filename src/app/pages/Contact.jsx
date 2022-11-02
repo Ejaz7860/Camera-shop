@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <>
       <Header />
-      <Heading textAlign={"center"} mt={4} fontSize={{ base: '24px', md: '36px', lg: '40px' }}>
+      <Heading  textAlign={"center"} mt={4} fontSize={{ base: '24px', md: '36px', lg: '40px' }}>
         Contact Us
         <Box
           margin={"auto"}

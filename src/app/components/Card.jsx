@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { addTOCart } from "../redux/action/action";
-import ProductCart from "./ProductCart";
+// import ProductCart from "./ProductCart";
 import Category from "./Categories";
 
 const Card = () => {
@@ -19,12 +19,12 @@ const Card = () => {
   const dispatch = useDispatch();
 
   const Cart = (data) => {
-    dispatch(addTOCart(data));
+    dispatch(addTOCart({data}));
   };
 
   return (
     <>
-      <Container justifyContent={"center"} display={"flex"} maxW="100%">
+      <Container justifyContent={"center"} display={"flex"} maxW="80%">
         {/* CATEOGRY Component */}
         <Container
           mt={3}
@@ -52,7 +52,7 @@ const Card = () => {
           >
             {data.items ? (
               data.items.map((item, idx) => {
-                const { title, price, img } = item;
+                const {id, title, price, img, desc } = item;
                 return (
                   <>
                     <Box
@@ -98,7 +98,9 @@ const Card = () => {
 
                           <Box as="span" mr="2" color="gray.600" fontSize="sm">
                             <Button
-                              onClick={() => Cart(10)}
+                              onClick={() => Cart({
+                                id, title, price, img, desc
+                              })}
                               colorScheme="pink"
                               variant="outline"
                             >
@@ -119,7 +121,7 @@ const Card = () => {
         {/* Product List ends here */}
 
         {/* Add to cart component */}
-        <Container
+        {/* <Container
           mt={3}
           right={4}
           position="fixed"
@@ -132,7 +134,7 @@ const Card = () => {
           height={"480"}
         >
           <ProductCart />
-        </Container>
+        </Container> */}
       </Container>
     </>
   );

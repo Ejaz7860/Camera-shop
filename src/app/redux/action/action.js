@@ -1,4 +1,4 @@
-import { GET_ALL_PRODUCT, ADD_TO_CART } from "../constant/constant";
+import {  ADD_TO_CART } from "../constant/constant";
 
 // export default function GetAllProduct() {
 //   return {

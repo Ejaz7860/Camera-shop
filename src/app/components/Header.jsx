@@ -1,6 +1,7 @@
 import { Heading, HStack } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom"
-import '../styles/Header.css'
+import { NavLink } from "react-router-dom";
+import "../styles/Header.css";
+import CartItem from "./CartItem";
 
 const Header = () => {
   return (
@@ -26,6 +27,11 @@ const Header = () => {
           </NavLink>
           <NavLink className="nav" to={"/camera/contact"}>
             Contact
+          </NavLink>
+
+          {/* Cart count */}
+          <NavLink  to={"/camera/cart/items"}>
+            <CartItem />
           </NavLink>
         </HStack>
       </div>

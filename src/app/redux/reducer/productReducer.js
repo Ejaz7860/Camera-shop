@@ -1,13 +1,19 @@
 import { ADD_TO_CART } from "../constant/constant";
 
-const productReducer = (state, action) => {
-  console.log('Product Reducer is calling', action)
-  switch (action) {
-    case action.type === ADD_TO_CART:
-      return [action.payload + 10,...state];
+const initProduct = {
+  numberCart:0,
+  Carts:[],
+  _products:[]
+}
+
+const productReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD_TO_CART:
+      console.log('ProductReducer',action)
+      return [...state,action.data]
 
     default:
-      return [];
+      return state;
   }
 };
 export default productReducer;
