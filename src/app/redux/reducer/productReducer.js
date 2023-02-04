@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../constant/constant";
+import { ADD_TO_CART ,} from "../constant/constant";
 
 // const initProduct = {
 //   numberCart:0,
@@ -16,3 +16,5 @@ const productReducer = (state = [], action) => {
   }
 };
 export default productReducer;
+
+

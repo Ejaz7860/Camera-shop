@@ -13,18 +13,19 @@ import {
 import React from "react";
 import Header from "../components/Header";
 const Contact = () => {
+
   return (
     <>
       <Header />
-      <Heading  textAlign={"center"} mt={4} fontSize={{ base: '24px', md: '36px', lg: '40px' }}>
+      <Heading id='contact'  textAlign={"center"} mt={4} fontSize={{ base: '24px', md: '36px', lg: '40px' }}>
         Contact Us
         <Box
           margin={"auto"}
-          shadow={"lg"}
+          boxShadow='2xl'
           w={{base:'600px', md:'500px', sm:'480px'}}
           p={{sm:'4'}}
           mt={2}
-          h={'auto'}
+          h={'500'}
           backgroundColor={"white"}
         >
           <HStack p={4}>
@@ -58,7 +59,7 @@ const Contact = () => {
             </FormControl>
           </HStack>
         </Box>
-      </Heading>
+      </Heading>    
     </>
   );
 };

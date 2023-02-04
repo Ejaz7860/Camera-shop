@@ -16,6 +16,7 @@ import Category from "./Categories";
 
 const Card = () => {
   const data = useSelector((state) => state.cardReducer);
+  console.log(data)
 
   const dispatch = useDispatch();
 
@@ -43,8 +44,6 @@ const Card = () => {
         </Container>
 
         {/* End */}
-
-        {/* Product List */}
         <Container m={0} maxW="700">
           <SimpleGrid
             columns={{ md: "3", sm: "1" }}
@@ -61,7 +60,7 @@ const Card = () => {
                       maxW="300"
                       borderWidth="1px"
                       borderRadius="lg"
-                      m={2}
+                      m={1}
                       overflow="hidden"
                     >
                       <Image src={img} alt={""} />

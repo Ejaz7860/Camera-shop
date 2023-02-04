@@ -1,8 +1,10 @@
 import { Heading, HStack } from "@chakra-ui/react";
 import "../styles/Header.css";
 import Navigation from "./Navigation";
+import { useState } from "react";
 
 const Header = () => {
+  const [data, setData] = useState("")
   return (
     <>
       <div className="Header">

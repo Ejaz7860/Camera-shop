@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
 import Header from "../components/Header";
-import '../styles/Button.css'
+import "../styles/Button.css";
 import {
   Button,
   Box,
@@ -10,7 +10,7 @@ import {
   Image,
   SimpleGrid,
   Text,
-  ButtonGroup
+  ButtonGroup,
 } from "@chakra-ui/react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
@@ -21,7 +21,7 @@ const SingleProduct = () => {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <Header />
-      <Container maxW={{ md: "800", sm: "550" }} h={100} mt={6}>
+      <Container  maxW={{ md: "800", sm: "550" }} h={'500'} mt={6}>
         <SimpleGrid
           shadow={"lg"}
           w="full"
@@ -51,26 +51,23 @@ const SingleProduct = () => {
               Price {state.price}
             </Text>
 
-            <ButtonGroup mt='6' gap='1'>
-
-            <button
-              onClick={() => dispatch(addTOCart(state))}
-             className='btn'
-            >
-              Add to Cart
-            </button>
-            <Link to={"/camera/cart/items"}>
-              <Button
-                colorScheme="black"
-                rightIcon={<FaShoppingCart />}
-                variant="outline"
+            <ButtonGroup mt="6" gap="1">
+              <button
+                onClick={() => dispatch(addTOCart(state))}
+                className="btn"
               >
-                Check cart
-              </Button>
-            </Link>
+                Add to Cart
+              </button>
+              <Link to={"/camera/cart/items"}>
+                <Button
+                  colorScheme="black"
+                  rightIcon={<FaShoppingCart />}
+                  variant="outline"
+                >
+                  Check cart
+                </Button>
+              </Link>
             </ButtonGroup>
-
-         
           </Box>
         </SimpleGrid>
       </Container>
